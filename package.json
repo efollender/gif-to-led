@@ -11,6 +11,7 @@
   "dependencies": {
     "get-pixels": "^3.2.2",
     "gify-parse": "^1.0.5",
+    "http": "0.0.0",
     "jquery": "^2.1.4",
     "react": "^0.13.1",
     "react-router": "^0.13.2",
