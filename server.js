@@ -1,7 +1,7 @@
 //Lets require/import the HTTP module
 var http = require('http');
 var ws281x = require('rpi-ws281x-native'),
-    canvas = require('../index.js').create(32,32),
+    canvas = require('rpi-ws281x-canvas').create(32,32),
     ctx = canvas.getContext('2d');
 
 //Lets define a port we want to listen to
