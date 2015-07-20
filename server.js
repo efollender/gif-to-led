@@ -1,29 +1,18 @@
-//Lets require/import the HTTP module
+// Lets require/import the HTTP module
 // var http = require('http');
-var ws281x = require('rpi-ws281x-native'),
-    canvas = require('rpi-ws281x-canvas').create(32,32),
-    ctx = canvas.getContext('2d');
 
-// //Lets define a port we want to listen to
-// const PORT=8080; 
+// var SlackAlert = require('./src/js/SlackAlert');
+//   var alert = new SlackAlert(2);
+//   alert.start();
+  
+// var AudioParser = require('./src/js/audioParser');
 
-// //We need a function which handles requests and send response
-// function handleRequest(request, response){
-//     response.end('It Works!! Path Hit: ' + request.url);
-// }
+// var parser = new AudioParser(2);
 
-// //Create a server
-// var server = http.createServer(handleRequest);
+// parser.init('./src/audio/boss.mp3');
 
-// //Lets start our server
-// server.listen(PORT, function(){
-//     //Callback triggered when server is successfully listening. Hurray!
-//     console.log("Server listening on: http://localhost:%s", PORT);
-// });
+var SpotifyViewer = require('./src/js/spotifyData.js');
 
-ws281x.init(100);
+var Spotify = new SpotifyViewer;
 
-ctx.fillStyle = 'blue';
-ctx.fillRect(2, 2, 8, 8);
-
-ws281x.render(canvas.toUint32Array());
+Spotify.init();

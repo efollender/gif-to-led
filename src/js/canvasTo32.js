@@ -1,6 +1,7 @@
 "use strict";
 
-const parser = require('gify-parse');
+const GIFDecoder = require('gif-stream/decoder');
+const concat = require('concat-frames');
 const pixels = require('get-pixels');
 const canvasTo32 = require('rpi-ws281x-canvas');
 const async = require('async');
@@ -73,6 +74,6 @@ function startRendering(images) {
     }, 1000/FPS);
 }
 
-loadImages(IMAGE_ARRAY, function(err, images) {
-    startRendering(images)
-});
+// loadImages(IMAGE_ARRAY, function(err, images) {
+//     startRendering(images)
+// });
