@@ -16,6 +16,8 @@
     "gify-parse": "^1.0.5",
     "httpdispatcher": "^0.4.0",
     "jquery": "^2.1.4",
+    "node-rpi-rgb-led-matrix": "https://github.com/efollender/node-rpi-rgb-led-matrix",
+    "Node_MPR121": "https://github.com/dwisk/Node_MPR121",
     "react": "^0.13.1",
     "react-router": "^0.13.2",
     "request": "^2.58.0",

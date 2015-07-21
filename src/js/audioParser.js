@@ -134,7 +134,7 @@ var AudioParser = function(boards){
 		// console.log('normalized',bufferData);
 	},
 	//TODO: Convert each audio frame to canvas image
-	this.drawToCanvas = function(pixels){
+	this.drawToCanvas = function(pixels, end){
 	    	var waveform = setInterval(function(){
 	    		var newPixels = pixels;
 		    	for(var i in newPixels){
@@ -151,10 +151,10 @@ var AudioParser = function(boards){
 		    	}
 		    	var newPixels = pixels;
 		    }, 1);
-		   setTimeout(function(){
-		   	Adafruit.clear();
-		   	clearInterval(waveform);
-		   }, 4000);
+          if (end) {
+               Adafruit.clear();
+               clearInterval(waveform);
+          }
 	},
 	//TODO: Send each canvas drawing to matrix
 	this.sendToMatrix = function(canvasDrawing){
@@ -162,9 +162,14 @@ var AudioParser = function(boards){
 	},
 	//TODO: parser flow
 	this.init = function(file){
-		var me = this;
+		var me = this,
+          i = 0;
 		Adafruit.start(board.height, boards, false);
-		this.drawToCanvas(fakeData);
+          while(i < 10){
+               this.drawToCanvas(fakeData, 'end');
+               i++;
+
+          }
 		// this.streamAudio(file, function(data){
 		// 	// me.normalizeData(data.data);
 		// 	// this.decodeMP3(data)
